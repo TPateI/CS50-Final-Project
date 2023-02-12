@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+
+{% block body %}
+    <h2>Featured Listings</h2>
+    <div class="container">
+        <div class="row">
+            {% for property in data %}
+            <div class="col-lg-4 d-flex align-items-stretch">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ property[2] }}</h5>
+                        {% if property[8] == 0 %}
+                            <h6 class="card-subtitle mb-2 text-muted">POA</h6>
+                        {% else %}
+                            <h6 class="card-subtitle mb-2 text-muted">£{{ property[8] }}</h6>
+                        {% endif %}
+                        <p class="card-text">{{ property[5] }}</p>
+                        <a href="{{ property[0] }}">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

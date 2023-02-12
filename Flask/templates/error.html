@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block body %}
+<div class="card text-bg-warning mb-3">
+    <div class="card-header">Error</div>
+    <div class="card-body">
+      <h5 class="card-title">Invalid Input</h5>
+      <p class="card-text">{{ msg }}</p>
+    </div>
+</div>
+{% endblock %}

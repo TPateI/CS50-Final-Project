@@ -1,0 +1,22 @@
+{% extends "main.html" %}
+
+{% block body %}
+    {% for property in data %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ property[2] }}</h5>
+                {% if property[8] == 0 %}
+                    <h6 class="card-subtitle mb-2 text-muted">POA</h6>
+                {% else %}
+                    <h6 class="card-subtitle mb-2 text-muted">£{{ property[8] }}</h6>
+                {% endif %}
+                <h7 class="card-subtitle mb-2 text-muted">{{ property[7] }}</h7>
+                <div class="text-wrap">
+                    <p class="card-text">{{ property[5] }}</p>
+                </div>
+                <a href="{{ property[0] }}"> Visit Website</a>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
