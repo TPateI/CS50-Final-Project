@@ -4,7 +4,7 @@
 
 My project was to gather property data from off Rightmove and Zoopla of properties for sale in London and use this data to create a web application which will allow you to search using the postcode, prices and sort by price ascending and descending.
 
-To get the data I used a python library called Scrapy. Scrapy allowed me to use web crawlers and direct them to data I wanted to retrieve. Within the repository tehre are 4 spiders in total. This is because I first had to get the id's and links to the properties before I could get their data.
+To get the data I used a python library called Scrapy. Scrapy allowed me to use web crawlers and direct them to data I wanted to retrieve. Within the repository there are 4 spiders in total. This is because I first had to get the id's and links to the properties before I could get their data.
 
 #### Listing spiders
 The listing spiders return the id's and links to each property on the site within London. By adding a command in the terminal, the spiders can write the data to a json file in my specified format. This will allow me to use another spider to get the links from the json files and get the actual property data. These are stores within the listing jsons. Due to not all properties being on the same page, I needed to direct the spider to the next page once it finishes scraping one. I found that Rightmove increamented a number in their url by 24, each time you increased a page. Using this I was able to iterate through each page and return all the data. Zoopla on the other hand was easier, as on each pagination button, it had a link which I could just extract and use.
